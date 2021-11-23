@@ -4,10 +4,11 @@
  */
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Memoize {
 
-    List<Integer> memorizeCache = new ArrayList<>();
+    private static List<Integer> memorizeCache = new ArrayList<>();
 
     public static int calculate(Integer input){
 
@@ -15,10 +16,16 @@ public class Memoize {
             return 1;
         } else {
 
-            memo
+            if(memorizeCache.size() >= input){
+                System.out.println("Retrieved from cache: " + input);
+                return memorizeCache.get(input - 1);
+            }
 
             System.out.println("Calculate for input: " + input);
-            return input * calculate(input -1);
+            int factorial = input * calculate(input -1);
+            /* 계산값을 저장해 계산 과정/단계를 줄여줌 */
+            memorizeCache.add(factorial);
+            return factorial;
         }
     }
 
@@ -26,10 +33,14 @@ public class Memoize {
         System.out.println("Factorial of 3: ");
         System.out.println(calculate(3));
 
+        System.out.println("Cache Size: " + memorizeCache.size());
+        System.out.println("Cache: " + memorizeCache);
         System.out.println("******");
         System.out.println("******");
-        System.out.println("Factorial of 4: ");
-        System.out.println(calculate(4));
+        System.out.println("Factorial of 7: ");
+        System.out.println(calculate(7));
+        System.out.println("Cache Size: " + memorizeCache.size());
+        System.out.println("Cache: " + memorizeCache);
     }
 
 }
