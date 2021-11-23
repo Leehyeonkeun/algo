@@ -3,13 +3,20 @@
 하나의 Transaction 에서 선행 계산되었던 결과가 반복적 이루어 진다면 저장해서 사용하면 퍼포먼스 향상에 도움될 듯
  */
 
+import java.util.ArrayList;
+
 public class Memoize {
+
+    List<Integer> memorizeCache = new ArrayList<>();
 
     public static int calculate(Integer input){
 
         if(input == 0){
             return 1;
         } else {
+
+            memo
+
             System.out.println("Calculate for input: " + input);
             return input * calculate(input -1);
         }
