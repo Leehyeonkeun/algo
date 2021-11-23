@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class sumBiggest {
+public class SumBiggest {
 //    // 재귀함수를 쓴다니;; 나에게 생소한 방법이네
 //// 가장 큰 두 수의 합 구하기
 //    static int[] Nums = {1,2,3,4,5};
