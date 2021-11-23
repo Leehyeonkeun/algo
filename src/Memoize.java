@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Memoize {
 
     List<Integer> memorizeCache = new ArrayList<>();
-
+ ß
     public static int calculate(Integer input){
 
         if(input == 0){
