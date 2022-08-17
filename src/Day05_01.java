@@ -2,22 +2,27 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 // 입력값 중 가장 많이 나온 캐릭터 수 (hashMap 의 key, getOrDefault 사용)
-
-// input
+// HashMap 함수
+//  - getOrDefault, containsKey, size, remove
+// <input>
 // 5
 // aaabc
-// output
+// <output>
 // a
 public class Day05_01 {
 
     public char solution(int n, String s){
         char answer=' ';
-
         HashMap<Character, Integer> map = new HashMap<>();
 
         for(char x : s.toCharArray()){
             map.put(x, map.getOrDefault(x, 0)+1);
         }
+
+        System.out.println("containsKey : "+map.containsKey('A'));
+        System.out.println("key Size : "+map.size());
+        System.out.println("key Size : "+map.remove('A'));
+
         int max = Integer.MIN_VALUE;
         for(char key : map.keySet()){
             System.out.println(key+" "+map.get(key));
