@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class String_Day07_01 {
+public class Day07_01_String {
 
     public String solution(String str){
         String answer = "";
@@ -20,7 +20,7 @@ public class String_Day07_01 {
     }
 
     public static void main(String[] args) {
-        String_Day07_01 T = new String_Day07_01();
+        Day07_01_String T = new Day07_01_String();
         Scanner kb = new Scanner(System.in);
         String str = kb.next();
         System.out.println(T.solution(str));
